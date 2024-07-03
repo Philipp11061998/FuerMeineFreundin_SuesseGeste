@@ -26,9 +26,11 @@ $(document).ready(function() {
             }
     });
 
-    $("#sendMessage").click(function() {
+    $("#sendMessage").click(function(event) {
+        event.preventDefault(); // Verhindert das Standardverhalten des Formulars
         const userInput = $("#message").val();
-    
+        console.log(userInput);
+
         $.ajax({
             url: '../sensitive-data/sendmessageJasmin.php',
             type: 'POST',
@@ -41,9 +43,12 @@ $(document).ready(function() {
             error: function(jqXHR, textStatus, errorThrown) {
                 console.error('AJAX error:', textStatus, errorThrown);
                 console.log('Server response:', jqXHR.responseText);
+                console.log('Status code:', jqXHR.status); // Gibt den Statuscode aus
+                console.log('Response headers:', jqXHR.getAllResponseHeaders()); // Gibt die Response-Header aus
             }
         });
     });
+    
     
     
 
