@@ -30,6 +30,6 @@ coverage
 *.tsbuildinfo
 
 *.env
-.lib/*
+/lib/*
 
-.config/*
+/config/*
