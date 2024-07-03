@@ -37,27 +37,27 @@ $(document).ready(function() {
     $('#chat').click(function(event) {
         // Zeigen des Passwortfeldes
         $("#ChatPassword").css("display", "flex");
-
-        $('#submitpassword').click(function(event){
+    
+        $('#submitpassword').click(function(event) {
             event.preventDefault();
-
+    
             // Lesen der Benutzereingabe
             const userInput = $("#password").val();
-
+    
             // Abrufen des Admin-Passworts aus der Konfigurationsdatei
             $.ajax({
-                url: '../sensitive-data/getAdminPassword.php',
+                url: '../sensitive-data/getJasminPassword.php',
                 type: 'GET',
                 dataType: 'json',
                 success: function(response) {
                     const adminPassword = response.adminPassword;
-        
+    
                     if (userInput === adminPassword) {
                         $("#password").val("");
                         $('#login').toggleClass('blink_correct');
                         
                         // Umleiten zur Chat-Seite
-                        location.href = "./nested/chat.html";
+                        window.location.href = "./nested/chat.html";
                     } else {
                         console.log("Falsches Passwort. Bitte versuchen Sie es erneut.");
                         $("#password").val("");
@@ -73,6 +73,7 @@ $(document).ready(function() {
             });
         });
     });
+    
     
 
     $("#sendMessage").click(function(event) {
