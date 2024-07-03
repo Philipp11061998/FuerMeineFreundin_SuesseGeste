@@ -1,250 +1,292 @@
 /* Media Queries for Responsive Design */
 
-    /* Smartphones (portrait and landscape) ----------- */
-    @media only screen and (max-width: 600px) {
-        * {
-            background-color: #f3d3eb;
-        }
+/* Mobile First */
+* {
+    background-color: #f3d3eb;
+}
 
-        hr{
-            width: 100%;
-            border-color: black;
-        }
+#holder{
+    display: flex;
+    justify-content: center;
+}
 
-        #headerText{
-            margin-top: 1.4rem;
-            display: flex;
-            font-size: 2.1rem;
-            font-family: lovely;
-            text-decoration: underline;
-            font-weight: bolder;
-        }
 
-        #HomeText{
-            display: flex;
-            flex-direction: column;
+hr{
+    width: 100%;
+    border-color: black;
+}
+
+#headerText{
+    margin-top: 1.4rem;
+    display: flex;
+    font-size: 2.1rem;
+    font-family: lovely;
+    text-decoration: underline;
+    font-weight: bolder;
+}
+
+#HomeText{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 85vw;
+    font-size: 19px;
+}
+
+#greet{
+    margin-top: 0.5rem;
+    text-align: center;
+    font-weight: bolder;
+}
+
+.hamburg {
+    position: fixed;
+    z-index: 20;
+}
+
+label.hamburg { 
+    display: block;
+    background: #555; 
+    width: 44px; 
+    height: 48px; 
+    position: fixed; 
+    margin-left: 1px;
+    border-radius: 4px; 
+    opacity: 1;
+}
+
+.line { 
+    position: absolute; 
+    left: 10px;
+    height: 3px; 
+    width: 25px; 
+    background: #fff; 
+    border-radius: 2px;
+    display: block; 
+    transition: 0.5s; 
+    transform-origin: center; 
+}
+
+.line:nth-child(1) { top: 12px; }
+.line:nth-child(2) { top: 24px; }
+.line:nth-child(3) { top: 36px; }
+
+.hamburg.clicked .line:nth-child(1) {
+    transform: translateY(12px) rotate(-45deg);
+}
+
+.hamburg.clicked .line:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburg.clicked .line:nth-child(3) {
+    transform: translateY(-12px) rotate(45deg);
+}
+
+#nav{
+    display: none;
+    position: fixed;
+    flex-direction: column;
+    width: 13.2rem;
+    border: 1px solid black;
+    height: 150vh;
+    background-color: #dcc4d6;
+    margin: 0;
+    margin-left: -1rem;
+    margin-top: -4rem;
+    align-items: flex-start;
+    z-index: 10;
+
+    button a{
+        background-color: #dcc4d6;
+        text-decoration: none;
+        color: black;
+    }
+}
+
+#home{
+    margin-top: 8rem;
+}
+
+#home::before{
+    content: "\1F3E0";
+}
+
+#moments::before{
+    content: "\2605";
+    color: yellow;
+    font-size: 1.9rem;
+    margin: 0.2rem;
+}
+
+#chat::before{
+    content: "\2709 ";
+    color: purple;
+    margin: 0.3rem;
+}
+
+#home,
+#moments,
+#chat{
+    border: none;
+    background-color: #dcc4d6;
+    font-size: 1.5rem;
+    margin-left: 1rem;
+}
+
+.active::after{
+    content: " \261A";
+    margin-left: 0.3rem;
+    color: black;
+    display: inline-block;
+    animation: moveRight 1s ease infinite;
+}
+
+@keyframes moveRight {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(4px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+#holderHome{
+    display: flex;
+    z-index: 1;
+    align-items: center;
+    justify-content: center;
+}
+#content{
+    display: flex;
+    flex-direction: column;
+    width: 90vw;
+    align-items: center;
+    justify-content: center;
+}
+
+#holderMoments{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+
+    h2{
+        margin-top: 1rem;
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    #Zusatz{
+        font-size: 0.8rem;
+    }
+}
+
+#ausklappen{
+    border: 1px solid black;
+    border-radius: 1rem;
+    padding: 0.5rem;
+    margin-bottom: 0.7rem;
+    text-decoration: none;
+    color: blue;
+    background-color: rgb(243, 239, 239);
+}
+
+.arrow{
+    font-weight: bolder;
+    background-color: rgb(243, 239, 239);
+    font-size: 1rem;
+}
+
+#NavigationMoments{
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1, 1, 1;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: center;
+
+    a {
+        border: 1px solid black;
+        border-radius: 1rem;
+        padding: 0.5rem;
+        text-decoration: none;
+        color: blue;
+        background-color: rgb(243, 239, 239);
+    }
+}
+
+#everyMoment{
+    width: 90vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;  
+    
+    h4{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5rem;
+    }
+
+    article{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        p{
             text-align: center;
-            width: 85vw;
-            font-size: 19px;
-        }
-
-        #greet{
-            margin-top: 0.5rem;
-            text-align: center;
-            font-weight: bolder;
-        }
-
-        .hamburg {
-            position: fixed;
-            z-index: 20;
-        }
-
-        label.hamburg { 
-            display: block;
-            background: #555; 
-            width: 44px; 
-            height: 48px; 
-            position: fixed; 
-            margin-left: 1px;
-            border-radius: 4px; 
-            opacity: 1;
-        }
-
-        .line { 
-            position: absolute; 
-            left: 10px;
-            height: 3px; 
-            width: 25px; 
-            background: #fff; 
-            border-radius: 2px;
-            display: block; 
-            transition: 0.5s; 
-            transform-origin: center; 
-        }
-
-        .line:nth-child(1) { top: 12px; }
-        .line:nth-child(2) { top: 24px; }
-        .line:nth-child(3) { top: 36px; }
-
-        .hamburg.clicked .line:nth-child(1) {
-            transform: translateY(12px) rotate(-45deg);
-        }
-
-        .hamburg.clicked .line:nth-child(2) {
-            opacity: 0;
-        }
-
-        .hamburg.clicked .line:nth-child(3) {
-            transform: translateY(-12px) rotate(45deg);
-        }
-
-        #nav{
-            display: none;
-            position: fixed;
-            flex-direction: column;
-            width: 13.2rem;
-            border: 1px solid black;
-            height: 150vh;
-            background-color: #dcc4d6;
-            margin: 0;
-            margin-left: -1rem;
-            margin-top: -4rem;
-            align-items: flex-start;
-            z-index: 10;
-
-            button a{
-                background-color: #dcc4d6;
-                text-decoration: none;
-                color: black;
-            }
-        }
-
-        #home{
-            margin-top: 8rem;
-        }
-
-        #home::before{
-            content: "\1F3E0";
-        }
-
-        #moments::before{
-            content: "\2605";
-            color: yellow;
-            font-size: 1.9rem;
-            margin: 0.2rem;
-        }
-
-        #chat::before{
-            content: "\2709 ";
-            color: purple;
-            margin: 0.3rem;
-        }
-
-        #home,
-        #moments,
-        #chat{
-            border: none;
-            background-color: #dcc4d6;
-            font-size: 1.5rem;
-            margin-left: 1rem;
-        }
-
-        .active::after{
-            content: " \261A";
-            margin-left: 0.3rem;
-            color: black;
-            display: inline-block;
-            animation: moveRight 1s ease infinite;
-        }
-
-        @keyframes moveRight {
-            0% {
-                transform: translateX(0);
-            }
-            50% {
-                transform: translateX(4px);
-            }
-            100% {
-                transform: translateX(0);
-            }
-        }
-
-        #holderHome{
-            display: flex;
-            z-index: 1;
-            align-items: center;
-            justify-content: center;
-        }
-        #content{
-            display: flex;
-            flex-direction: column;
-            width: 90vw;
-            align-items: center;
-            justify-content: center;
-        }
-
-        #holderMoments{
-            display: flex;
-            flex-direction: column;
-            width: 100vw;
-            height: 100vh;
-            align-items: center;
-
-            h2{
-                margin-top: 1rem;
-                font-size: 1.8rem;
-                text-align: center;
-            }
-
-            #Zusatz{
-                font-size: 0.8rem;
-            }
-        }
-
-        #ausklappen{
-            border: 1px solid black;
-            border-radius: 1rem;
-            padding: 0.5rem;
-            text-decoration: none;
-            color: blue;
-            background-color: rgb(243, 239, 239);
-        }
-
-        .arrow{
-            font-weight: bolder;
-            background-color: rgb(243, 239, 239);
-            font-size: 1rem;
-        }
-
-        #NavigationMoments{
-            display: flex;
-            flex-wrap: wrap;
-            flex: 1, 1, 1;
-            flex-direction: row;
-            gap: 1rem;
-            justify-content: center;
-
-            a {
-                border: 1px solid black;
-                border-radius: 1rem;
-                padding: 0.5rem;
-                text-decoration: none;
-                color: blue;
-                background-color: rgb(243, 239, 239);
-            }
-        }
-
-        #everyMoment{
-            width: 90vw;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;  
-            
-            h4{
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                font-size: 1.5rem;
-            }
-
-            article{
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-
-                p{
-                    text-align: center;
-                }
-            }
-        }
-
-        img{
-            margin-bottom: 1rem;
-        }
-
-        .jumper{
-            font-size: 0.7rem;
         }
     }
+}
+
+img,
+video{
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+}
+
+.imageAndVideoholder{
+    text-align: center;
+}
+
+.jumper{
+    font-size: 0.7rem;
+}
+
+
+/*Für Tablets*/
+@media only screen and (min-width: 601px) and (max-width: 777px){
+
+}
+
+/*Für Desktop PCs*/
+@media only screen and (min-width: 778px) {
+
+    body{
+        font-size: 1.5rem;
+    }
+
+    .jumper{
+        font-size: 1.2rem;
+    }
+
+    hr{
+        width: 100vw;
+    }
+
+    #everyMoment p{
+        width: 50vw;
+    }
+
+    .imageAndVideoholder{
+        width: 50%;
+        text-align: center;
+    }
+}
