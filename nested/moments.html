@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jasminibini: Moments</title>
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <link rel="icon" type="image/x-icon" href="../lib/img/favicon.png">
+    <link rel="stylesheet" href="../src/assets/style.css" >
+    <script src="../src/script.js" defer></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('../lib/service-worker.js')
+                .then(() => console.log('Service Worker registered successfully.'))
+                .catch(error => console.log('Service Worker registration failed:', error));
+        }
+    </script>
+</head>
+<body>
+    <div id="SiteStart"></div>
+    <div class="row">
+        <label class="hamburg" id="hamburgLabel">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </label>
+        <nav id="nav">
+            <button id="home"><a href="../index.html">Home</a></button>
+            <button id="moments" class="active"><a href="./moments.html">Moments</a></button>
+            <button id="chat"><a href="./chat.html">Chat</a></button>
+        </nav>
+    </div>
+    <div id="holderMoments">
+        <h1>Unsere Momente</h1>
+        <h2>Springe zu einem Tag: <br>            
+            <span id="Zusatz">(Alles Einträge aus deinem Kalender)</span>
+        </h2>
+        <button id="ausklappen">Tage ausklappen<span class="arrow">&#x2193;</span></button>
+        <br>
+        <div id="NavigationMoments" style="display: none;">
+            <a href="#D30_07_2021">30.07.2021</a> <!-- Erstes Treffen -->
+            <a href="#D08_08_2021">08.08.2021</a> <!-- Zusammen -->
+            <a href="#D14_08_2021">14.08.2021</a> <!-- Döner Würselen -->
+            <a href="#D28_08_2021">28.08.2021</a> <!-- Umzug nach Tittardsfeld -->
+            <a href="#D14_10_2021">14.10.2021</a> <!-- Katzen zu uns geholt -->
+            <a href="#D29_04_2022">29.04.2022</a> <!-- Wohnungsübergabe in Herzogenrath. Letzter Tag vor Zusammenziehen-->
+            <a href="#D07_05_2022">07.05.2022</a> <!-- Jasmins erstes Mal im Stadtion -->
+            <a href="#D16_05_2022">16.05.2022</a> <!-- Nik ist wieder da!!!! -->
+            <a href="#D01_06_2022-04_06_2022">01.06.-04.06.22</a> <!-- Urlaub in Köln -->
+            <a href="#D11_06_2022">11.06.2022</a> <!-- Phantasialand -->
+            <a href="#D01_07_2022">01.07.2022</a> <!-- Sido Konzert -->
+            <a href="#D06_08_2022">06.08.2022</a> <!-- CSD mit TELUS -->
+            <a href="#D08_08_2022">08.08.2022</a> <!-- 1. Jahrestag -->
+            <a href="#D05_11_2022">05.11.2022</a> <!-- Movie Park -->
+            <a href="#D26_12_2022">26.12.2022</a> <!-- Weihnachtsessen bei uns -->
+            <a href="#D25_02_2023">25.02.2023</a> <!-- Entschieden Juna zu behalten -->
+            <a href="#D25_03_2023">25.03.2023</a> <!-- Umzug nach Stolberg -->
+            <a href="#D08_08_2023">08.08.2023</a> <!-- 2. Jahrestag + Verlobung -->
+            <a href="#D26_08_2023">26.08.2023</a> <!-- Sommerfest/Pfarrfest Vicht mit kostenlosem Kuchen -->
+            <a href="#D02_12_2023">02.12.2023</a> <!-- Weihnachtssingen in Vicht -->
+            <a href="#D09_12_2023">09.12.2023</a> <!-- Weihnachtsmärkte Stolberg -->
+            <a href="#D12_02_2024">12.02.2024</a> <!-- Karnevalszug Eschweiler -->
+            <a href="#D15_06_2024">15.06.2024</a> <!-- 2. Pfarrfest Vicht -->
+        </div>
+        <br>
+        <hr>
+        <div id="everyMoment">
+            <h3>Oder Scrolle durch die Momente 😍</h3>
+            <article id="D30_07_2021">
+                <h4>30.07.2021</h4>
+                <img src="lib/img/30.07.21/30.07._Chat.jpg" alt="Chat_Kennenlernen" width="280rem">
+                <br>
+                <p>
+                    Das mein Engel, das war der erste Tag. Der erste Tag unseres absolut traumhaften Lebens.
+                    Hier hat alles begonnen. Hier nahm alles seinen Lauf.
+                    <br>
+                    <br>
+                    Nicole fuhr mich liebevollerweise zu dir. Mein Herz pochte bereits den gesamten Tag. Ich hatte
+                    kaum Ruhe auf der Arbeit. Alles in allem, ich war völlig fertig😂
+                    <br><br>
+                    Doch dann kamst du aus der WG raus... Das war er. Der Moment der Wahrheit. Ich blickte in dein Gesicht und mein Atem stockte.
+                    Ich erblickte deine atemberaubenden Augen und war vom ersten Moment an verliebt. ❤️
+                    <br><br>
+                    Dann habe ich dich so lange angeschaut bis wir uns endlich geküsst haben. Und baby, ab da konnte ich nie wieder von dir ablassen.
+                    Ich bin schlichtweg einfach süchtig nach dir.
+                </p>
+                <a href="#SiteStart" class="jumper">Zum Anfang der Seite</a>
+                <br>
+                <hr>
+                <br>
+            </article>
+            <article id="D08_08_2021">
+                <h4>08.08.2021</h4>
+                <img src="lib/img/08.08.21/08.08._TierparkSchild.jpg" alt="Tierpark_Schild" width="280rem">
+                <br><br>
+                <img src="lib/img/08.08.21/08.08._Esel.jpg" alt="Tierpark_Esel" width="280rem">
+                <br><br>
+                <img src="lib/img/08.08.21/08.08._Wir.jpg" alt="Wir" width="280rem">
+                <br><br>
+                <p>
+                    Ich würde mal behaupten, dass das ein Tag ist der keiner Worte bedarf. Das ist der Tag, auf dessen Schulter jeder Eintrag auf dieser Seite ruht. Vielen Dank für alles ❤️
+                </p>
+                <a href="#SiteStart" class="jumper">Zum Anfang der Seite</a>
+                <br>
+                <hr>
+                <br>
+            </article>
+            <article id="D14_08_2021">
+                <h4>14.08.2021</h4>
+                <img src="lib/img/14.08.21/14.08._Blumen.jpeg" alt="14.08._Blumen" width="280rem">
+                <br>
+                <br>
+                <img src="lib/img/14.08.21/14.08._Essen.jpg" alt="14.08.Essen" width="280rem">
+                <br>
+                <p>
+                    An diesem Tag scheinen wir das erste Mal Döner Essen gewesen zu sein 😍
+                    <br>
+                    <br>
+                    Mhhhhhm 😋 da durfte ich das erste Mal das Essen in deiner Lieblingsdönerbude kosten. Ich hoffe, dass wir das noch viele viele Male wiederholen können😍
+                </p>
+                <a href="#SiteStart" class="jumper">Zum Anfang der Seite</a>
+                <br>
+                <hr>
+                <br>
+            </article>
+            <article id="D28_08_2021">
+                <h4>28.08.2021</h4>
+                <img src="lib/img/28.08.21/28.08._Alte_Wohnung.jpeg" alt="28.08._Alte_Wohnung" width="280rem">
+                <br>
+                <br>
+                <img src="lib/img/28.08.21/28.08_Umzugswagem.jpeg" alt="28.08_Umzugswagem" width="280rem">
+                <br>
+                <p>
+                    Achja, hier hast du den Lenz kennengelernt 😂
+                    <br>
+                    <br>
+                    Was ein Tag das war. Viel schleppen, viel meckern meinerseits. Aber dann war es soweit. Du kamst
+                    endlich aus der WG raus und bist in deine <strong>erste Wohnung</strong> gezogen. Was ein unfassbares Gefühl.
+                    <br><br>
+                    Ich bin wirklich dankbar, dass ich das Gefühl mit dir teilen durfte. Unter anderem weil es nicht lange dauerte, bis wir sowieso nur noch
+                    bei dir waren. 😂
+                    <br><br>
+                    Ich liebe es so sehr wie stolz du darauf warst!😍
+                </p>
+                <a href="#SiteStart" class="jumper">Zum Anfang der Seite</a>
+                <br>
+                <hr>
+                <br>
+            </article>
+            <article id="D14_10_2021">
+                <h4>14.10.2021</h4>
+                <img src="lib/img/14.10.21/14.10._KatzisBoden.jpeg" alt="14.10. Katzis auf dem Boden bei uns" width="280rem">
+                <br>
+                <br>
+                <img src="lib/img/14.10.21/14.10._KatzisBaum.jpeg" alt="14.10. Katzis auf dem Kratzbaum bei uns" width="280rem">
+                <br>
+                <p>
+                Beim raussuchen dieser Bilder bin ich ganz kurz vorm Weinen. Die ganze Zeit! 😂
+                <br><br>
+                Ich glaube ich brauche dir nicht zu sagen, wie schön dieser Tag für uns beide ist. Nun durften wir die Katzis endlich in unserem Leben begrüßen.
+                <br><br>
+                Nein, wir durften die Katzis nun endlich in dem Leben begrüßen, was sie verdient haben! 😍
+                </p>
+                <a href="#SiteStart" class="jumper">Zum Anfang der Seite</a>
+                <br>
+                <hr>
+                <br>
+            </article>
+            <article id="D29_04_2022">
+                <h4>29.04.2022</h4>
+                <p>
+                    Für diesen Tag habe ich leider kein Bild. Aber an diesem Tag haben wir meine Wohnung in Herzogenrath übergeben. Das heißt,
+                    ab "heute" wohnten wir endlich offiziell zusammen 😍 
+                    <br><br>
+                    Ein weiterer atemberaubend bedeutender Moment in unserem Leben, für welchen ich auf ewig dankbar sein werde ❤️
+                </p>
+                <a href="#SiteStart" class="jumper">Zum Anfang der Seite</a>
+                <br>
+                <hr>
+                <br>
+            </article>
+            <article id="D07_05_2022">
+                <h4>07.05.2022</h4>
+                <img src="lib/img/07.05.22/07.05._ErstesMalStadion.jpeg" alt="07.05._ErstesMalStadion" width="280rem">
+                <br>
+                <br>
+                <video width="360rem" controls>
+                    <source src="lib/img/07.05.22/07.05._StadionJubel.mp4" type="video/mp4">
+                    Dein Browser unterstützt kein MP4
+                </video>
+                <br>
+                <br>
+                <video width="360rem" controls>
+                    <source src="lib/img/07.05.22/07.05._StadionPlatzsturm.mp4" type="video/mp4">
+                    Dein Browser unterstützt kein MP4
+                </video>
+                <br>
+                <br>
+                <img src="lib/img/" alt="" width="280rem">
+                <br>
+                <p>
+                    Vielleicht wirst du erkennen, dass das gar kein Tag mit mir ist. Nein, es ist dein erstes Mal RheinEnergierSTADION!!!! ⚽
+                    <br><br>
+                    So lange hast du davon geträumt. Dann war es endlich so weit! 😍
+                    <br><br>
+                    Auch wenn ich hier nicht so viel schreiben kann, möchte ich das du weißt, dass dieser Tag auch für mich viel bedeutet hat ❤️
+                </p>
+                <a href="#SiteStart" class="jumper">Zum Anfang der Seite</a>
+                <br>
+                <hr>
+                <br>
+            </article>
+            <article id="D16_05_2022">
+                <h4>16.05.2022</h4>
+                <img src="lib/img/16.05.22/16.05._NikCaddy.jpeg" alt="16.04. Nik im Caddy" width="280rem">
+                <br>
+                <br>
+                <img src="lib/img/16.05.22/16.05._NikBack.jpg" alt="16.05. Nik wieder auf der Couch" width="280rem">
+                <br>
+                <p>
+                Ein Bild sagt mehr als tausend Worte...
+                <br><br>
+                Selten in meinem Leben habe ich so viel geweint. An diesem Tag allerding vor Freude. Das war nämlich der Tag an dem wir unser Baby endlich wieder in unseren Armen halten durften 😍
+                <br><br>
+                Die Zeit davor, war so unbeschreiblich grauenvoll. Wie viele Nächte bin ich durch Büsche geklettert, wie oft habe ich die Hoffnung aufgegeben. Und trotzdem hast du weiter geglaubt. Und an eben diesem Tag
+                hat dein Glaube Wirkung gezeigt. ❤️
+                </p>
+                <a href="#SiteStart" class="jumper">Zum Anfang der Seite</a>
+                <br>
+                <hr>
+                <br>
+            </article>
+            <article id="D01_06_2022-04_06_2022">
+                <h4>01.06.2022 - 04.06.2022</h4>
+                <p>
+                Für diese kleine Reise auf unserer Reise dachte ich mir ist es schöner meine Worte zuerst zu lesen und den Rest danach auf 
+                sich wirken zu lassen 😍
+                <br><br>
+                Hier befinden wir uns in unserem ersten Urlaub 😍 Mein Gott war der teuer 😂
+                <br><br>
+                Aber jeder Cent war es Wert. Wir haben so viele tolle Dinge erlebt und so viel Zeit miteinander genießen dürfen. Vielen Dank für diesen Traumtrip
+                mein wunderschöner Engel
+                </p>
+                <br>
+                <img src="lib/img/01.06.-04.06.22/01.06._Zimmerkarte.jpg" alt="01.06. Zimmerkarte Hotel" width="280rem">
+                <br>
+                <br>
+                <img src="lib/img/01.06.-04.06.22/01.06._AtomUhr.jpg" alt="01.06. Atomuhr in Geburtstag" width="280rem">
+                <br>
+                <img src="lib/img/01.06.-04.06.22/02.06._Schloss.jpg" alt="02.06. Schloss auf der Brücke" width="280rem">
+                <br>
+                <br>
+                <img src="lib/img/01.06.-04.06.22/02.06._BesterAsiate.jpeg" alt="02.06. Beste Asiate in Köln" width="280rem">
+                <br>
+                <img src="lib/img/01.06.-04.06.22/02.06._PartyBoot.jpg" alt="02.06. Partyboot" width="280rem">
+                <br>
+                <br>
+                <img src="lib/img/01.06.-04.06.22/03.06._Minigolf.jpg" alt="03.06. Minigolf" width="280rem">
+                <br>
+                <img src="lib/img/01.06.-04.06.22/03.06._Wir.jpg" alt="03.06. wir beim Minigolf" width="280rem">
+                <br>
+                <br>
+                <img src="lib/img/01.06.-04.06.22/03.06._KoelnMerch.jpg" alt="03.06. Köln Merch" width="280rem">
+                <br>
+                <img src="lib/img/01.06.-04.06.22/04.06._Tattoo.jpg" alt="04.06. Köln Tattoo" width="280rem">
+                <br>
+                <br>
+                <img src="lib/img/01.06.-04.06.22/04.06. Heimreise.jpg" alt="04.06. Heimreise aus Köln" width="280rem">
+                <br>
+                <br>
+                <a href="#SiteStart" class="jumper">Zum Anfang der Seite</a>
+                <br>
+                <hr>
+                <br>
+            </article>
+            <article id="D11_06_2022">
+                <h4>11.06.2022</h4>
+                <img src="lib/img/11.06.22/11.06._BusPhantasialand.jpg" alt="11.06. Bus zum Phantasialand" width="280rem">
+                <br>
+                <br>
+                <img src="lib/img/11.06.22/11.06._WirChiapas.jpg" alt="11.06. Wir auf dem Weg zum Chiapas" width="280rem">
+                <br>
+                <br>
+                <img src="lib/img/11.06.22/11.06._SlushEis.jpg" alt="11.06. Slush Eis " width="280rem">
+                <br>
+                <p>
+                Adrenalin pur!
+                <br><br>
+                Das war so ein geiler Tag im Phantasialand. Mit einer der schönsten Geburtstage meines Lebens! Ich liebe dich soooo sehr, dass es für dich in Ordnung war, dass ich nicht mit auf
+                die Achterbahnen konnte.
+                <br><br>
+                Einen beinahe herausfordernden Tag hast du damit einfach unvergesslich gemacht 😍
+                <br><br>
+                Und das obwohl ich fast Müll mitgenommen hätte 🤔
+                </p>
+                <a href="#SiteStart" class="jumper">Zum Anfang der Seite</a>
+                <br>
+                <hr>
+                <br>
+            </article>
+            <article id="D01_07_2022">
+                <h4>01.07.2022</h4>
+                <img src="lib/img/01.07.22/01.07.22_Wir.jpg" alt="01.07.2022 Wir bei Sido" width="280rem">
+                <br>
+                <br>
+                <video width="360rem" controls>
+                    <source src="lib/img/01.07.22/01.07.22_VideoSido.mp4" type="video/mp4">
+                    Dein Browser unterstützt kein MP4
+                </video>
+                <br>
+                <br>
+                <img src="lib/img/01.07.22/01.07.22_3_SidoBecher.jpg" alt="01.07.2022 3 Becher auf dem Sido Konzert" width="280rem">
+                <br>
+                <br>
+                <p>
+                    Was ein krasser Tag. An diesem Tag waren wir gemeinsam auf dem fantastischen Sido Konzert. Ich war Nicole so dankbar für die Tickets und umso dankbarer war ich dir für den Tag ❤️ Aber mein Gott, meine Füße haben mich umgebracht. 😂 Ich bin mir zwar nicht sicher, ob es so war, aber ich wette viel Geld die Rückfahr war scheiße 😂❤️
+                    <br>
+                    <br>	
+                    Vielen Dank für ein unvergessliches Konzert mein Engel😍
+                </p>
+                <a href="#SiteStart" class="jumper">Zum Anfang der Seite</a>
+                <br>
+                <hr>
+                <br>
+            </article>
+            <article id="D06_08_2022">
+                <h4>06.08.2022</h4>
+                <img src="lib/img/06.08.22/06.08.22_Fahrt_zum_CSD.jpeg" alt="06.08.2022 Fahrt zum CSD" width="280rem">
+                <br>
+                <br>
+                <img src="lib/img/06.08.22/06.08.22_Jasmin_Traumfrau_CSD.jpg" alt="06.08.2022 Jasmin auf dem CSD" width="280rem">
+                <br>
+                <br>
+                <img src="lib/img/06.08.22/06.08.22_WirCSD.jpg" alt="06.08.2022 Wir auf dem CSD" width="280rem">
+                <br>
+                <p>
+                    Ich wünschte ich könnte sagen ich erinnere mich an alles, aber meine Fresse war ich betrunken😂
+                    <br>
+                    <br>
+                    Wenn ich mich nicht täusche, dann war das unser erster gemeinsamer CSD? Es war aufjedenfall ein, bis auf die Gedächtnislücken, unvergesslicher CSD mit einer damals noch mega geilen Firma.
+                    <br>
+                    <br>
+                    Ich habe es auch unbeschreiblich geliebt, einfach mal Zeit mit dir und den Leuten allen zu verbringen. Vielen Dank dafür😍 
+                </p>
+                <a href="#SiteStart" class="jumper">Zum Anfang der Seite</a>
+                <br>
+                <hr>
+                <br>
+            </article>
+            <article id="D08_08_2022">
+                <h4>08.08.2022</h4>
+                <img src="lib/img/08.08.22/08.08.2022_DeinGeschenkanmich.jpeg" alt="08.08.2022 dein Geschenk an mich" width="280rem">
+                <br>
+                <br>
+                <img src="lib/img/08.08.22/08.08.2022_GeilesEssen.jpg" alt="08.08.2022 Geiles Essen" width="280rem">
+                <br>
+                <p>
+                    Der 08.08.2022. Das war ein ganz besonderer Tag. Das war nämlich unser erster Jahrestag. Auch hier waren wir wieder krass geiles Essen essen😍 Ich liebe diese Dönerbude einfach durch dich.
+                    <br>
+                    <br>
+                    Einfach Fast Food und süße Geschenke. Das sind absolute Traumdates gewesen😍
+                </p>
+                <a href="#SiteStart" class="jumper">Zum Anfang der Seite</a>
+                <br>
+                <hr>
+                <br>
+            </article>
+            <article id="D05_11_2022">
+                <h4>05.11.2022</h4>
+                <img src="lib/img/05.11.22/05.11.22_JasminMitDickemPinguin.jpg" alt="05.11.2022 Jasmin mit dickem Pinguin" width="280rem">
+                <br>
+                <br>
+                <img src="lib/img/05.11.22/05.11.22_PhilippUndSpongebob.jpg" alt="05.11.2022 Philipp mit Spongebob Charakteren" width="280rem">
+                <br>
+                <br>
+                <img src="lib/img/05.11.22/05.11.22_CoolesMonster.jpg" alt="05.11.2022 Cooles Monster" width="280rem">
+                <br>
+                <br>
+                <img src="lib/img/05.11.22/05.11.22_NetteMonsterGruppe.jpg" alt="" width="280rem">
+                <br>
+                <p>
+                Soooooo cool dieser Tag. Ich konnte einfach Fotos mit Spongebob und Patrick machen 😍
+                <br>
+                <br>
+                Ich weiß, du warst nicht ganz so zufrieden damit, dass wir beide nicht so viel machen konnten wie Axel und seine Olle, aber ich denke trotz allem, dass das ein fantastischer Tag war.
+                <br>
+                <br>
+                Dann kam der Horror😂 Da kam dann ein ganz klein bisschen Panik in dir auf. Aber auch das mein Engel haben wir ganz easy hinbekommen❤️ ich liebe dich so unendlich dafür, dass wir immer so geile Unternehmungen machen ❤️
+                </p>
+                <a href="#SiteStart" class="jumper">Zum Anfang der Seite</a>
+                <br>
+                <hr>
+                <br>
+            </article>
+            <article id="D26_12_2022">
+                <h4>26.12.2022</h4>
+                <p>
+                Auch wenn ich in deinen Google Bildern keine Bilder zu diesem Tag gefunden habe, muss ich einfach festlegen, dass das einer der mit Abstand bedeutendsten Tage meines Lebens.
+                Mein Leben läuft so vernünftig, dass wir meine Familie einfach zu einem Familienessen einladen konnte. Wir alle liebten dein Essen so unbeschreiblich. Es ist überwältigend
+                wie viel Mühe du dir immer gibst und mit wie viel Liebe und Elan du immer dahinterstehst.
+                <br>
+                <br>
+                An der Stelle bin ich mir sicher, dass ich mich nicht nur im Namen von mir sondern auch im Namen meiner, UNSERER gemeinsamen Familie bei dir bedanken kann❤️
+                </p>
+                <a href="#SiteStart" class="jumper">Zum Anfang der Seite</a>
+                <br>
+                <hr>
+                <br>
+            </article>
+            <article id="D25_02_2023">
+                <h4>25.02.2023</h4>
+                <p>
+                    Tja, der 25.02.2023. Ich frage mich ja, ob du ohne meine Bilder bereits weißt, welcher krasse Tag in unserem Leben das war. Wenn nicht, dann helfen dir sicherlich die folgenden Bilder:
+                </p>
+                <br>
+                <img src="lib/img/25.02.23/25.02.2023_BusverbindungzuHurensohn.jpg" alt="Busverbindung zum H..sohn" width="280rem">
+                <br>
+                <br>
+                <img src="lib/img/25.02.23/25.02.2023_BestätigungBesitzJuna.jpeg" alt="25.02.2023 Bestätigung über Besitz von Juna" width="280rem">
+                <br>
+                <br>
+                <img src="lib/img/25.02.23/25.02.23_JunaUndNik1.jpg" alt="25.02.2023 Bestätigung über Besitz von Juna" width="280rem">
+                <br>
+                <br>
+                <img src="lib/img/25.02.23/25.02.23_JunaUndNik2.jpg" alt="25.02.2023 Bestätigung über Besitz von Juna" width="280rem">
+                <br>
+                <br>
+                <img src="lib/img/25.02.23/25.02.23_JunaNikJasmin.jpg" alt="25.02.2023 Bestätigung über Besitz von Juna" width="280rem">
+                <br>
+                <p>
+                    Und, stimmt es? Ein brutal heftiger Tag. Und zwar zu 100 Prozent im positiven. Das ist der Beginn von 5 neuen perfekten Leben. Es hat uns alle einfach Mal so völlig durchgerüttelt.
+                    Die Katzen, sowie wir, haben uns natürlich erstmal anpassen müssen, aber vor allem dann mit dem Umzug, hat sich alles verändert. Wir sind eine so tolle kleine Familie und ich bin jede
+                    Sekunde dankbar dafür, dass wir diese Entscheidung getroffen haben.
+                    <br>
+                    <br>
+                    Ich bereue es in keinster Weise❤️
+                </p>
+                <a href="#SiteStart" class="jumper">Zum Anfang der Seite</a>
+                <br>
+                <hr>
+                <br>
+            </article>
+            <article id="D25_03_2023">
+                <h4>25.03.2023</h4>
+                <img src="lib/img/25.03.23/25.03.23_DanielPhilippTransporter.jpg" alt="25.03.2023 Philipp und Daniel im Transporter" width="280rem">
+                <br>
+                <br>
+                <img src="lib/img/25.03.23/25.03.23_HomePicture.jpg" alt="25.03.2023 Bild mit Home Schriftzug" width="280rem">
+                <br>
+                <br>
+                <img src="lib/img/25.03.23/25.03.23_NikSallyErkunden.jpg" alt="25.03.2023 Nik und Sally erkunden neue Wohnung" width="280rem">
+                <br>
+                <br>
+                <img src="lib/img/25.03.23/25.03.23_NikSallyUnterBett.jpg" alt="25.03.2023 Nik und Sally verstecken sich im/unterm Boxspringbett" width="280rem">
+                <br>
+                <p>
+                Exakt einen Monat nachdem wir Juna "bekamen" 😂
+                <br>
+                <br>
+                    Das war mit einer dieser Tage, an welchen man sich fragt, ob das Ganze nur ein Traum ist. Unser Leben wirkte schon fast zu perfekt, so toll wie alles lief. 1 Besichtigung und zack die absolute Traumwohnung. Einfach alles atemberaubend und überwältigend.
+                    <br>
+                    <br>
+                    Du kannst dir sicher sein, dass dadurch einige Bilder entstanden sind, welche noch kommen ❤️
+                </p>
+                <a href="#SiteStart" class="jumper">Zum Anfang der Seite</a>
+                <br>
+                <hr>
+                <br>
+            </article>
+            <article id="D08_08_2023">
+                <h4>08.08.2023</h4>
+                <p>
+                    Das ist ein Tag, zu dem brauche ich nichts zu sagen oder? ❤️
+                    <br>
+                    <br>
+                    Tja, ich tue es wirklich nicht. Dieser Tag ist so.. wow.. über diesen Tag möchte ich nur reden, wenn ich dir in die Augen schauen kann. Wenn ich dich so verliebt anschauen kann, wie ich mich fühle. Wenn du spüren kannst, wie viel mir der Tag bedeutet.
+                </p>
+                <br>
+                <img src="lib/img/08.08.23/08.08.23_DieBeidenRinge.jpg" alt="08.08.2023 Unsere Hände mit den Ringen" width="280rem">
+                <br>
+                <br>
+                <img src="lib/img/08.08.23/08.08.23_JasminEsel.jpg" alt="08.08.2023 Jasmin und der Esel im Tierpark (nicht Ich)" width="280rem">
+                <br>
+                <br>
+                <img src="lib/img/08.08.23/08.08.23_JasminJunaHandPfote.jpg" alt="08.08.2023 Junas Pfote auf Jasmins Hand mit dem Ring" width="280rem">
+                <br>
+                <br>
+                <img src="lib/img/08.08.23/08.08.23_TraumambienteMitJuna.jpg" alt="08.08.2023 Traumambiente mit Juna darauf" width="280rem">
+                <br>
+                <br>
+                <img src="lib/img/08.08.23/08.08.23_Traumambiente.jpg" alt="08.08.2023 Traumambiente dann im dunkeln" width="280rem">
+                <br>
+                <br>
+                <img src="lib/img/08.08.23/08.08.23_SuperMarioFilm.jpg" alt="08.08.2023 Super Mario Film" width="280rem">
+                <br>
+                <br>
+                <img src="lib/img/08.08.23/08.08.23_WhatsappBuch.jpg" alt="08.08.2023 ein atemberaubendes Buch aus unserem Whatsapp Chat" width="280rem">
+                <br>
+                <br>
+                <a href="#SiteStart" class="jumper">Zum Anfang der Seite</a>
+                <br>
+                <hr>
+                <br>
+            </article>
+            <article id="D26_08_2023">
+                <h4>26.08.2023</h4>
+                <br>
+                <br>
+                <img src="lib/img/26.08.23/26.08.23_CutestesPaarEver.jpeg" alt="26.08.2023 Einfach die süßesten" width="280rem">
+                <br>
+                <br>
+                <img src="lib/img/26.08.23/26.08.23_KuchenFastKostenlos.jpeg" alt="26.08.2023 Kuchen der kostenlos war. Für eine Geldspende. Aber kostenlos. Für Geldspende" width="280rem">
+                <br>
+                <br>
+                <img src="lib/img/26.08.23/26.08.23_JasminPhilippRing.jpeg" alt="26.08.2023 Traumpaar Verlobte Jasmin Joeris Kraut" width="280rem">
+                <br>
+                <p>
+                Das hier ist der Tag von dem wir immer überlegt haben wann er war 😂
+                <br>
+                Wenn mich nicht alles täuscht, war das das Pfarrfest mit dem geilen "kostenlosen" Kuchen😍 Ich bin immer wieder erneut stolz, wie toll du in Vicht aus dir herausgekommen bist 😍
+                </p>
+                <a href="#SiteStart" class="jumper">Zum Anfang der Seite</a>
+                <br>
+                <hr>
+                <br>
+            </article>
+            <article id="D02_12_2023">
+                <h4>02.12.2023</h4>
+                <img src="lib/img/02.12.23/02.12.23_SingenTassen.jpg" alt="02.12.2023 Tassen beim Weihnachtssingen" width="280rem">
+                <br>
+                <br>
+                <img src="lib/img/02.12.23/02.12.23_Wir.jpg" alt="02.12.2023 wir auf dem Weg zum Weihnachtssingen" width="280rem">
+                <br>
+                <p>
+                Unser erstes gemeinsames Weihnachtssingen 😍
+                <br>
+                <br>
+                So schön. Hier haben wir einfach mit soooo vielen Leuten gesprochen😂 ich fand es mega mega toll. Du wurdest wie immer von Bianka abgefüllt und warst dementsprechend auch überglücklich 😂
+                <br>
+                <br>
+                Jetzt müssen wir diesen Tim nur wiedertreffen, damit ich einen krassen Job bekomme und wir uns mehr geilen Stuff kaufen können😂❤️
+                <br>
+                <br>
+                Das war so ein toller Baum und Abend❤️
+                </p>
+                <a href="#SiteStart" class="jumper">Zum Anfang der Seite</a>
+                <br>
+                <hr>
+                <br>
+            </article>
+            <article id="D09_12_2023">
+                <h4>09.12.2023</h4>
+                <img src="lib/img/09.12.23/09.12.23_Wir.jpg" alt="09.12.2023 Wir auf den Weihnachtsmärkten" width="280rem">
+                <br>
+                <br>
+                <img src="lib/img/09.12.23/09.12.23_SchoeneBaeumeBurg.jpg" alt="09.12.2023 tolle Bäume auf der Burg" width="280rem">
+                <br>
+                <br>
+                <img src="lib/img/09.12.23/09.12.23_TolleStolbergerStadt.jpg" alt="09.12.2023 wunderchöne Stolberger Innenstadt" width="280rem">
+                <br>
+                <p>
+                    Das waren die mit Abstand schönsten Weihnachtsmärkte auf denen ich je gewesen bin😍
+                    <br>
+                    <br>
+                    Trotz der abertausenden Schritte war das einfach nur geil. Wir haben sooo lecker gegessen udn waren einfach auf ZWEI Weihnachtsmärkten nacheinander 😂
+                    <br>
+                    <br>
+                    Ich bin dir so dankbar, dass du immer und immer wieder dafür sorgst, dass ich solche tollen Abende erlebe ❤️
+                </p>
+                <a href="#SiteStart" class="jumper">Zum Anfang der Seite</a>
+                <br>
+                <hr>
+                <br>
+            </article>
+            <article id="D12_02_2024">
+                <h4>12.02.2024</h4>
+                <img src="lib/img/12.02.24/12.02.24_Wir.jpg" alt="12.02.2024 Wir auf dem Eschweiler Zug" width="280rem">
+                <br>
+                <br>
+                <img src="lib/img/12.02.24/12.02.24_Karnevalszug.jpg" alt="12.02.2024 Karnevalszug in Eschweiler" width="280rem">
+                <br>
+                <br>
+                <img src="lib/img/12.02.24/12.02.24_JasminFaengt.jpg" alt="12.02.2024 Jasmin fängt auf dem Karnevalszug" width="280rem">
+                <br>
+                <br>
+                <img src="lib/img/12.02.24/12.02.24_WasTutJunaDa.jpg" alt="12.02.2024 wtf, was tut Juna da?" width="280rem">
+                <br>
+                <p>
+                Ein weiteres Mal, wo du mir einen der Orte deines Lebens zeigst. Ich genieße es immer so unfassbar, dass du so viele Orte hast, welche dir so viel bedeuten.
+                <br>
+                <br>
+                Umso schöner ist es, dass du mich daran teilhaben lässt. Du hast so viele tolle Emotionen und ich liebe dich unbeschreiblich und genieße es so so so sehr, diese mit dir teilen zu dürfen❤️😍
+                </p>
+                <a href="#SiteStart" class="jumper">Zum Anfang der Seite</a>
+                <br>
+                <hr>
+                <br>
+            </article>
+            <article id="D15_06_2024">
+                <h4>15.06.2024</h4>
+                <img src="lib/img/15.06.24/15.06.2024_WirBalkon.jpg" alt="15.06.2024 Wir auf dem Balkon vor dem Pfarrfest" width="280rem">
+                <br>
+                <br>
+                <img src="lib/img/15.06.24/15.06.24_Drinks.jpg" alt="15.06.2024 2 Drinks" width="280rem">
+                <br>
+                <br>
+                <br><img src="lib/img/15.06.24/15.06.24_WirPfarrfest.jpg" alt="15.06.2024 wir auf dem Pfarrfest" width="280rem">
+                <br>
+                <p>
+                Und damit sind wir schon in der Gegenwart. Wow, was war das für eine gewaltige Reise. Wir hatten Tiefen und wir hatten unglaublich viele Höhen.
+                <br>
+                <br>
+                Allerdings könnte ich nicht mal im Ansatz die gesamte Zeit und die Momente mit Ihren überwätigenden Emotionen erfassen, geschweige denn in Worte fassen😍
+                <br><br>
+                Vielen vielen Dank mein Engel für diese jetzt schon fast 3 Jahre. Ich habe jeden Bruchteil einer Sekunde mit dir genossen und weiß einfach, dass ich mein gesamtes Leben mit dir verbringen muss und möchte❤️
+                <br>
+                <br>
+                Jede verdammte Sekunde denke ich an dich. Selbst beim Coden! Du bist der Gedanke Nummer eins wenn ich aufstehe und der Gedanke Nummer eins wenn ich mich hinlege. Ich suche so oft nach deiner Nähe und Wärme, wenn du schläfst. Mir geht es so gut, wenn ich einfach nur weiß, dass du Teil meines Lebens bist 😍
+                <br>
+                <br>
+                Danke für alles meine Verlobte!❤️😍
+                </p>
+                <a href="#SiteStart" class="jumper">Zum Anfang der Seite</a>
+                <br>
+                <br>
+            </article>
+        </div>
+    </div>
+</body>
+</html>

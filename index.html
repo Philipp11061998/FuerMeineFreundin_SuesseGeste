@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jasminibini</title>
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <link rel="icon" type="image/x-icon" href="./lib/img/favicon.png">
+    <link rel="stylesheet" href="./src/assets/style.css" >
+    <script src="./src/script.js" defer></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('./lib/service-worker.js')
+                .then(() => console.log('Service Worker registered successfully.'))
+                .catch(error => console.log('Service Worker registration failed:', error));
+        }
+    </script>
+</head>
+<body>
+    <div id="SiteStart"></div>
+    <div class="row">
+        <label class="hamburg" id="hamburgLabel">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </label>
+        <nav id="nav">
+            <button id="home" class="active"><a href="./index.html">Home</a></button>
+            <button id="moments"><a href="./nested/moments.html">Moments</a></button>
+            <button id="chat"><a href="./nested/chat.html">Chat</a></button>
+        </nav>
+    </div>
+        <div id="holderHome">
+            <main id="content">
+                <span id="headerText">Die Liebe meines Lebens</span>
+                <br>
+                <div id="HomeText">
+                    <p>
+                        <span id="greet">Hallo mein wunderschöner Engel,</span><br>
+                        <br>
+                        <span id="lovetext">
+                            Wenn du das hier liest, dann befindest du dich wahrscheinlich schon auf dem Weg in die Reha.
+                            Für uns beide beginnt somit eine unfassbar spannende Reise. Eine Reise die sicherlich sehr
+                            beängstigend wird. An dessen Ende allerdings eine noch traumhaftere Zeit steht als die, die wir bisher erlebt haben.
+                            Eine Zeit wohl Stärke, voll Kraft und voll Mut. Unser Leben kann dann endlich beginnen.
+                            <br>
+                            <hr>
+                            <br>
+                            <strong>Was das bedeuten soll fragst du dich?</strong>
+                            <br>
+                            <br>
+                            Das bedeutet, dass wir bald endlich daran arbeiten können all unsere Träume zu erfüllen. Urlaube, Kölnreisen,
+                            mehr Dates, mehr Erlebnisse und vielleicht... nein wirklich nur vielleicht, auch noch 1 Katzenbaby.
+                            Aber für all das, muss ich dich bitten dich noch etwas zu gedulden. Ein bisschen Reise steht uns davor noch bevor.
+                            <br>
+                            Und damit du diese Reise bestehst wie niemand sonst es schaffen würde, findest du auf dieser Seite ein wenig offline Content.
+                            <br>
+                            <br>
+                            Beginn doch einfach mit einem Klick auf das Menü Icon oben links und schaue dir<a href="moments.html">Moments</a>an :) 
+                        </span>
+                    </p>
+                </div>
+            </main>
+        </div>
+</body>
+</html>

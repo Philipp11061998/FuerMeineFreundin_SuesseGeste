@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jasminibini: Chat</title>
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <link rel="icon" type="image/x-icon" href="../lib/img/favicon.png">
+    <link rel="stylesheet" href="../src/assets/style.css" >
+    <script src="../src/script.js" defer></script>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('../lib/service-worker.js')
+                .then(() => console.log('Service Worker registered successfully.'))
+                .catch(error => console.log('Service Worker registration failed:', error));
+        }
+    </script>
+</head>
+<body>
+    <div id="SiteStart"></div>
+    <div class="row">
+        <label class="hamburg" id="hamburgLabel">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </label>
+        <nav id="nav">
+            <button id="home"><a href="./index.html">Home</a></button>
+            <button id="moments"><a href="./moments.html">Moments</a></button>
+            <button id="chat" class="active"><a href="./chat.html">Chat</a></button>
+        </nav>
+    </div>
+    <div id="holder">
+        <div id="chatarea">
+
+            <form id="messageForm">
+                <input type="text" id="message" name="message" required>
+                <button type="submit" id="sendMessage">Senden</button>
+            </form>
+            
+        </div>
+    </div>
+</body>
+</html>
