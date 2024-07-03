@@ -29,8 +29,5 @@ coverage
 
 *.tsbuildinfo
 
-# Ignoriere alle PHP-Dateien im Verzeichnis sensitive-data/
-sensitive-data/*.php
-
 *.env
 .lib/*
