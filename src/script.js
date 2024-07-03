@@ -1,4 +1,12 @@
 $(document).ready(function() {
+    let latestMessageId = null;
+
+    LoadChatFirst();
+
+    LoadChat();
+    // Lade alle 2 Sekunden neue Nachrichten
+    setInterval(LoadChat, 2000);
+
     $("#hamburgLabel").click(function() {
         $(this).toggleClass('clicked');
         $("#nav").toggle(); // Toggle visibility of the navigation menu
@@ -29,7 +37,7 @@ $(document).ready(function() {
     $("#sendMessage").click(function(event) {
         event.preventDefault(); // Verhindert das Standardverhalten des Formulars
         const userInput = $("#message").val();
-        console.log(userInput);
+        $('#message').val("");
 
         $.ajax({
             url: '../sensitive-data/sendmessageJasmin.php',
@@ -48,34 +56,73 @@ $(document).ready(function() {
             }
         });
     });
-    
-    
-    
 
-    /*Das hier ist der Aufruf des Sendens .php
-    sendMessage() {
-        const formData = new FormData();
-        formData.append('message', this.message);
-        formData.append('csrf_token', this.csrfToken);
+    function LoadChatFirst(){
+        $.ajax({
+            url: '../sensitive-data/loadMessagesJasmin.php',
+            type: 'GET',
+            success: function(response) {
+                if (Array.isArray(response)) {
+                    response.forEach(function(message) {
+                        // Erstelle ein neues DOM-Element für jede Nachricht
+                        const messageElement = $('<div class="message"></div>');
+                        if(message.sender === "jasminibini"){
+                            messageElement.addClass("jasminibini");
+                        }
+                        messageElement.text(message.messagetext);
 
-        fetch('sendmessageJasmin.php', {
-            method: 'POST',
-            body: formData
-        })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
+                        // Füge das Element zum Chat-Fenster hinzu
+                        $('#chatbubbles').append(messageElement);
+
+                        // Aktualisiere die neueste Nachrichtentime-ID
+                        latestMessageId = message.id;
+                    });
+                }
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                console.error('AJAX error:', textStatus, errorThrown);
+                console.log('Server response:', jqXHR.responseText);
+                console.log('Status code:', jqXHR.status);
+                console.log('Response headers:', jqXHR.getAllResponseHeaders());
             }
-            return response.text(); // Hier können Sie die Serverantwort verarbeiten, wenn benötigt
-        })
-        .then(data => {
-            console.log('Message sent successfully:', data); // Optional: Serverantwort verarbeiten
-        })
-        .catch(error => {
-            console.error('There was a problem with the fetch operation:', error);
         });
     }
-        */
 
+    function LoadChat() {
+    $.ajax({
+        url: '../sensitive-data/loadMessagesJasmin.php',
+        type: 'GET',
+        success: function(response) {
+            if (Array.isArray(response)) {
+                response.reverse();
+                response.forEach(function(message) {
+                    // Überprüfe, ob die Nachricht eine ID hat und ob sie neu ist
+                    if (message.id && (latestMessageId === null || message.id > latestMessageId)) {
+                        // Erstelle ein neues DOM-Element für jede Nachricht
+                        const messageElement = $('<div class="message"></div>');
+                        if(message.sender === "jasminibini"){
+                            messageElement.addClass("jasminibini");
+                        }
+                        messageElement.text(message.messagetext);
+
+                        // Füge das Element zum Chat-Fenster hinzu
+                        $('#chatbubbles').append(messageElement);
+
+                        // Aktualisiere die neueste Nachrichtentime-ID
+                        latestMessageId = message.id;
+                    }
+                });
+            }
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+            console.error('AJAX error:', textStatus, errorThrown);
+            console.log('Server response:', jqXHR.responseText);
+            console.log('Status code:', jqXHR.status);
+            console.log('Response headers:', jqXHR.getAllResponseHeaders());
+        }
+    });
+}
 });
+
+
 

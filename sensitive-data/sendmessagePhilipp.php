@@ -1,18 +1,25 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: POST");
+header("Access-Control-Allow-Headers: Content-Type");
+
 session_start();
-require_once './config.php';
+
+// Einbinden der Konfigurationsdatei
+$config = require_once __DIR__ . '/../../config/config.php';  // Pfad zur config.php anpassen
 
 // Verbindung erstellen
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli($config['db_host'], $config['db_user'], $config['db_pass'], $config['db_name']);
 
 // Verbindung prüfen
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } else {
-    echo "Connected successfully";
+    echo "Connected successfully";  // Optional: Hier könnte eine Erfolgsmeldung ausgegeben werden
 }
-
-header('Content-Type: application/json'); // Setze den Content-Type auf JSON
 
 $response = array(); // Initialisiere ein leeres Array für die Antwort
 
@@ -49,4 +56,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 $conn->close();
 
 echo json_encode($response); // Gebe die Antwort als JSON zurück
-?>
