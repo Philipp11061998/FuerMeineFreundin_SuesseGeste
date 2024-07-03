@@ -240,12 +240,8 @@
             }
         }
 
-        #D30_07_2021{
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            width: 92vw;
+        img{
+            margin-bottom: 1rem;
         }
 
         .jumper{
