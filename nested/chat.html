@@ -6,7 +6,7 @@
     <title>Jasminibini: Chat</title>
     <script src="../node_modules/jquery/dist/jquery.min.js"></script>
     <link rel="icon" type="image/x-icon" href="../lib/img/favicon.png">
-    <link rel="stylesheet" href="../src/assets/style.css" >
+    <link rel="stylesheet" href="../src/assets/style_chat.css" >
     <script src="../src/script.js" defer></script>
 </head>
 <body>
@@ -23,14 +23,13 @@
             <button id="chat" class="active"><a href="./chat.html">Chat</a></button>
         </nav>
     </div>
-    <div id="holder">
+    <div id="Chatholder">
         <div id="chatarea">
             <div id="chatbubbles"></div>
-            <form id="messageForm">
-                <input type="text" id="message" name="message" required>
-                <button type="submit" id="sendMessage">Senden</button>
+            <form id="messageForm" autocomplete="off">
+                <input type="textarea" id="message" name="message" required autocomplete="off" >
+                <button type="submit" id="sendMessage" class="button-71">Senden</button>
             </form>
-            
         </div>
     </div>
 </body>

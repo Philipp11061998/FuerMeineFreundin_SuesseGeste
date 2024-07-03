@@ -76,6 +76,8 @@ $(document).ready(function() {
 
                         // Aktualisiere die neueste Nachrichtentime-ID
                         latestMessageId = message.id;
+
+                        messageElement.scollIntoView();
                     });
                 }
             },
@@ -110,6 +112,8 @@ $(document).ready(function() {
 
                         // Aktualisiere die neueste Nachrichtentime-ID
                         latestMessageId = message.id;
+
+                        messageElement.scollIntoView();
                     }
                 });
             }

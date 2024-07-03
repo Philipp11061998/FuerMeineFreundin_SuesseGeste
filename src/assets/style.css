@@ -246,6 +246,24 @@ label.hamburg {
     }
 }
 
+#Chatholder{
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    width: 100vw;
+    height: 100vh;
+
+    #chatarea{
+        display: flex;
+        margin-top: 4rem;
+        border: 1px solid black;
+        height: 80vh;
+        width: 95vw;
+        justify-content: center;
+        align-items: end;
+    }
+}
+
 .jasminibini{
     background-color: blue;
 }
