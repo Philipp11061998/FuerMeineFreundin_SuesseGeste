@@ -5,7 +5,11 @@
 body{
     margin: 0; 
     height: 100vh; 
-    overflow: hidden
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .hamburg {
@@ -164,6 +168,15 @@ label.hamburg {
         border-radius: 1rem;
     }
 
+    #chatbubbles .philipp{
+        width: 80%;
+        margin-left: auto;
+        margin-right: 0.5rem;
+        margin-bottom: 0.7rem;
+        padding: 0.5rem;
+        border-radius: 1rem;
+    }
+
     #messageForm{
         padding-top: 1rem;
         background-color: lightgray;
@@ -200,6 +213,38 @@ label.hamburg {
 
     .philipp{
         background-color: #F0EE92;
+    }
+}
+
+.blink_false {
+    animation: blinker_false 0.1s linear 1;
+}
+
+@keyframes blinker_false {
+    50% {
+        opacity: 0.0;
+        transform: translateX(0.1rem);
+        background-color: red;
+    }
+    100% {
+        transform: translateX(-0.1rem);
+        color: black;
+    }
+}
+
+.blink_correct{
+    animation: blinker_correct 0.1s linear 1;
+}
+
+@keyframes blinker_correct {
+    50% {
+        opacity: 0.0;
+        transform: translateX(0.1rem);
+        background-color: green;
+    }
+    100% {
+        transform: translateX(-0.1rem);
+        color: black;
     }
 }
 

@@ -7,23 +7,17 @@
     <script src="../node_modules/jquery/dist/jquery.min.js"></script>
     <link rel="icon" type="image/x-icon" href="../lib/img/favicon.png">
     <link rel="stylesheet" href="../src/assets/style_chat.css" >
-    <script src="../src/chat.js" defer></script>
-    <script src="../src/script.js" defer></script>
+    <link rel="stylesheet" href="../src/assets/style_admin.css">
+    <script src="../src/admin.js" defer></script>
 </head>
 <body>
-    <div id="SiteStart"></div>
-    <div class="row">
-        <label class="hamburg" id="hamburgLabel">
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
+    <form id="login">
+        <label id="label">Passwort:
+            <input type="password" name="password" id="password">
+            <input type="submit" id="submitpassword" class="button-71" value="Login">
         </label>
-        <nav id="nav">
-            <button id="home"><a href="../index.html">Home</a></button>
-            <button id="moments"><a href="./moments.html">Moments</a></button>
-            <button id="chat" class="active"><a href="./chat.html">Chat</a></button>
-        </nav>
-    </div>
+    </form>
+
     <div id="Chatholder">
         <div id="chatarea">
             <div id="chatbubbles"></div>

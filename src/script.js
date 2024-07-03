@@ -34,6 +34,47 @@ $(document).ready(function() {
             }
     });
 
+    $('#chat').click(function(event) {
+        // Zeigen des Passwortfeldes
+        $("#ChatPassword").css("display", "flex");
+
+        $('#submitpassword').click(function(event){
+            event.preventDefault();
+
+            // Lesen der Benutzereingabe
+            const userInput = $("#password").val();
+
+            // Abrufen des Admin-Passworts aus der Konfigurationsdatei
+            $.ajax({
+                url: '../sensitive-data/getAdminPassword.php',
+                type: 'GET',
+                dataType: 'json',
+                success: function(response) {
+                    const adminPassword = response.adminPassword;
+        
+                    if (userInput === adminPassword) {
+                        $("#password").val("");
+                        $('#login').toggleClass('blink_correct');
+                        
+                        // Umleiten zur Chat-Seite
+                        location.href = "./nested/chat.html";
+                    } else {
+                        console.log("Falsches Passwort. Bitte versuchen Sie es erneut.");
+                        $("#password").val("");
+                        $('#login').toggleClass('blink_false');
+                    }
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    console.error('AJAX-Fehler:', textStatus, errorThrown);
+                    console.log('Serverantwort:', jqXHR.responseText);
+                    console.log('Statuscode:', jqXHR.status);
+                    console.log('Antwort-Header:', jqXHR.getAllResponseHeaders());
+                }
+            });
+        });
+    });
+    
+
     $("#sendMessage").click(function(event) {
         event.preventDefault(); // Verhindert das Standardverhalten des Formulars
         const userInput = $("#message").val();
@@ -47,6 +88,7 @@ $(document).ready(function() {
             },
             success: function(response) {
                 console.log('Message sent successfully:', response);
+                LoadChat();
             },
             error: function(jqXHR, textStatus, errorThrown) {
                 console.error('AJAX error:', textStatus, errorThrown);
@@ -63,21 +105,22 @@ $(document).ready(function() {
             type: 'GET',
             success: function(response) {
                 if (Array.isArray(response)) {
+                    $('#chatbubbles').empty();
                     response.forEach(function(message) {
                         // Erstelle ein neues DOM-Element für jede Nachricht
-                        const messageElement = $('<div class="message"></div>');
+                        const messageElement = $(`<div class="message" id=${message.id}></div>`);
                         if(message.sender === "jasminibini"){
                             messageElement.addClass("jasminibini");
+                        } else if (message.sender === "philipp"){
+                            messageElement.addClass("philipp");
                         }
                         messageElement.text(message.messagetext);
 
                         // Füge das Element zum Chat-Fenster hinzu
                         $('#chatbubbles').append(messageElement);
 
-                        // Aktualisiere die neueste Nachrichtentime-ID
-                        latestMessageId = message.id;
-
-                        messageElement.scollIntoView();
+                        // Stelle sicher, dass das Element vorhanden ist, bevor du scrollIntoView() aufrufst
+                        messageElement[0].scrollIntoView({ behavior: 'smooth', block: 'end' });
                     });
                 }
             },
@@ -91,41 +134,52 @@ $(document).ready(function() {
     }
 
     function LoadChat() {
-    $.ajax({
-        url: '../sensitive-data/loadMessagesJasmin.php',
-        type: 'GET',
-        success: function(response) {
-            if (Array.isArray(response)) {
-                response.reverse();
-                response.forEach(function(message) {
-                    // Überprüfe, ob die Nachricht eine ID hat und ob sie neu ist
-                    if (message.id && (latestMessageId === null || message.id > latestMessageId)) {
-                        // Erstelle ein neues DOM-Element für jede Nachricht
-                        const messageElement = $('<div class="message"></div>');
-                        if(message.sender === "jasminibini"){
-                            messageElement.addClass("jasminibini");
-                        }
-                        messageElement.text(message.messagetext);
+        let isLoading = false;
 
-                        // Füge das Element zum Chat-Fenster hinzu
-                        $('#chatbubbles').append(messageElement);
-
-                        // Aktualisiere die neueste Nachrichtentime-ID
-                        latestMessageId = message.id;
-
-                        messageElement.scollIntoView();
-                    }
-                });
+            if (isLoading) {
+                return; // Verhindert das Ausführen, wenn bereits eine Anfrage läuft
             }
-        },
-        error: function(jqXHR, textStatus, errorThrown) {
-            console.error('AJAX error:', textStatus, errorThrown);
-            console.log('Server response:', jqXHR.responseText);
-            console.log('Status code:', jqXHR.status);
-            console.log('Response headers:', jqXHR.getAllResponseHeaders());
-        }
-    });
-}
+            isLoading = true;
+
+        $.ajax({
+            url: '../sensitive-data/loadMessagesJasmin.php',
+            type: 'GET',
+            success: function(response) {
+                if (Array.isArray(response)) {
+                    response.forEach(function(message) {
+                        // Überprüfe, ob die Nachricht eine ID hat und ob sie neu ist
+                        if (message.id ) {
+                            let lastMessageId = $('#chatbubbles').children().last().attr('id');
+                            // Überprüfe, ob die Nachricht eine andere ID hat und größer ist als die letzte Nachricht
+                            if (lastMessageId !== undefined && (message.id !== lastMessageId && parseInt(message.id) > parseInt(lastMessageId))) {
+                                // Erstelle ein neues DOM-Element für jede Nachricht
+                                const messageElement = $(`<div class="message" id="${message.id}"></div>`);
+                                if (message.sender === "jasminibini") {
+                                    messageElement.addClass("jasminibini");
+                                } else if (message.sender === "philipp") {
+                                    messageElement.addClass("philipp");
+                                }
+                                messageElement.text(message.messagetext);
+
+                                // Füge das Element zum Chat-Fenster hinzu
+                                $('#chatbubbles').append(messageElement);
+
+                                // Stelle sicher, dass das Element vorhanden ist, bevor du scrollIntoView() aufrufst
+                                messageElement[0].scrollIntoView({ behavior: 'smooth', block: 'end' });
+                            }
+
+                        }
+                    });
+                }
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                console.error('AJAX error:', textStatus, errorThrown);
+                console.log('Server response:', jqXHR.responseText);
+                console.log('Status code:', jqXHR.status);
+                console.log('Response headers:', jqXHR.getAllResponseHeaders());
+            }
+        });
+    }
 });
 
 
