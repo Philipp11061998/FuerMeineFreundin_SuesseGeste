@@ -33,3 +33,4 @@ coverage
 sensitive-data/*.php
 
 *.env
+.lib/*
