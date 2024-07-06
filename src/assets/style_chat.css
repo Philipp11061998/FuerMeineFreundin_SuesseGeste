@@ -159,21 +159,56 @@ label.hamburg {
         overflow: scroll;
     }
 
-    #chatbubbles .jasminibini{
-        width: 80%;
+    #emptyMessages{
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.3rem;
+        background-color: lightgray;
+    }
+
+    .message{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        font-size: 1.3rem;
+    }
+
+    #chatbubbles .philipp{
+        width: 60%;
         margin-left: 0.5rem;
         margin-bottom: 0.7rem;
         padding: 0.5rem;
         border-radius: 1rem;
+        background-color: #97C87F;
+
+        .pp{
+            padding: 0.5rem;
+            background-color: #97C87F;
+            height: 30px;
+            width: auto;
+            border-radius: 1.5rem;
+        }
     }
 
-    #chatbubbles .philipp{
-        width: 80%;
+    #chatbubbles .jasminibini{
+        width: 60%;
         margin-left: auto;
         margin-right: 0.5rem;
         margin-bottom: 0.7rem;
         padding: 0.5rem;
         border-radius: 1rem;
+        background-color: #F0EE92;
+
+        .pp{
+            padding: 0.5rem;
+            background-color: #F0EE92;
+            height: 30px;
+            width: auto;
+            border-radius: 1.5rem;
+        }
     }
 
     #messageForm{
@@ -204,14 +239,6 @@ label.hamburg {
             padding: 0.7rem;
             overflow-wrap: break-word;
         }
-    }
-
-    .jasminibini{
-        background-color: #97C87F;
-    }
-
-    .philipp{
-        background-color: #F0EE92;
     }
 }
 

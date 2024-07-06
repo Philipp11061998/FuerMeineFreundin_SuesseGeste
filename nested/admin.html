@@ -6,21 +6,24 @@
     <title>Jasminibini: Chat</title>
     <script src="../node_modules/jquery/dist/jquery.min.js"></script>
     <link rel="icon" type="image/x-icon" href="../lib/img/favicon.png">
-    <link rel="stylesheet" href="../src/assets/style_chat.css" >
     <link rel="stylesheet" href="../src/assets/style_admin.css">
     <script src="../src/admin.js" defer></script>
 </head>
 <body>
-    <form id="login">
-        <label id="label">Passwort:
-            <input type="password" name="password" id="password">
-            <input type="submit" id="submitpassword" class="button-71" value="Login">
-        </label>
-    </form>
+    <div id="ChatPassword">
+        <form id="login">
+            <h4>Bitet gib das Passwort ein um in den Chat zu gelangen</h4>
+            <label id="label">Passwort:
+                <input type="password" name="password" id="password">
+                <input type="submit" id="submitpassword" class="button-71" value="Login">
+            </label>
+        </form>
+    </div>
 
     <div id="Chatholder">
         <div id="chatarea">
             <div id="chatbubbles"></div>
+            <div id="emptyMessages">Bisher sind noch keine Nachrichten vorhanden :)</div>
             <form id="messageForm" autocomplete="off">
                 <input type="textarea" id="message" name="message" required autocomplete="off" >
                 <button type="submit" id="sendMessage" class="button-71">Senden</button>
