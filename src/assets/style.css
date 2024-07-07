@@ -400,6 +400,10 @@ video{
         width: 50vw;
     }
 
+    #NavigationMoments{
+        width: 50vw;
+    }
+
     .imageAndVideoholder{
         width: 50%;
         text-align: center;
