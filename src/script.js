@@ -1,13 +1,11 @@
-if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/service-worker.js')
-        .then(registration => {
-            console.log('Service Worker registriert mit dem Scope:', registration.scope);
-        }).catch(error => {
-            console.log('Service Worker Registrierung fehlgeschlagen:', error);
-        });
-}
-
-$(document).ready(function() {
-
-
+document.addEventListener('DOMContentLoaded', () => {
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/service-worker.js')
+            .then(registration => {
+                console.log('Service Worker registration successful with scope: ', registration.scope);
+            })
+            .catch(error => {
+                console.error('Service Worker registration failed:', error);
+            });
+    }
 });

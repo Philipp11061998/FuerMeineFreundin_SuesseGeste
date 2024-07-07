@@ -27,6 +27,8 @@ h1{
 #HomeText{
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
     width: 85vw;
     font-size: 19px;
@@ -393,7 +395,8 @@ video{
         width: 100vw;
     }
 
-    #everyMoment p{
+    #everyMoment p,
+    #HomeText p{
         width: 50vw;
     }
 

@@ -1,11 +1,12 @@
+console.log('Service Worker script loaded.');
+
 const PRECACHE = 'precache-v1';
 const RUNTIME = 'runtime';
 
-// Eine Liste lokaler Ressourcen, die immer zwischengespeichert werden sollen.
 const PRECACHE_URLS = [
-  'index.html',
-  'nested/moments.html',
-  'node_modules/jquery/dist/jquery.min.js',
+  '/index.html',
+  '/nested/moments.html',
+  '/node_modules/jquery/dist/jquery.min.js',
   '/src/assets/style.css',
   '/src/Nav.js',
   '/src/script.js',
@@ -83,72 +84,50 @@ const PRECACHE_URLS = [
   '/lib/img/favicon.png'
 ];
 
-// Der Installations-Handler kümmert sich um das Zwischenspeichern der Ressourcen, die wir immer benötigen.
 self.addEventListener('install', event => {
-  console.log('Service Worker: Install event in progress.');
-  event.waitUntil(
-      caches.open(PRECACHE)
-          .then(cache => {
-              console.log('Service Worker: Precaching resources.');
-              return cache.addAll(PRECACHE_URLS);
-          })
-          .then(() => {
-              console.log('Service Worker: Installation erfolgreich.');
-              self.registration.showNotification('Website ist offline verfügbar', {
-                  body: 'Sie können diese Website nun auch offline nutzen.',
-                  icon: '/lib/img/favicon.png'
-              });
-              return self.skipWaiting();
-          })
-          .catch(error => {
-              console.error('Service Worker: Precaching failed:', error);
-              throw error;
-          })
-  );
+    event.waitUntil(
+        caches.open(PRECACHE)
+            .then(cache => {
+                return Promise.all(
+                    PRECACHE_URLS.map(url => {
+                        return cache.add(url).catch(err => {
+                            console.error('Failed to cache', url, err);
+                        });
+                    })
+                );
+            })
+            .then(() => self.skipWaiting())
+    );
 });
 
 self.addEventListener('activate', event => {
-  console.log('Service Worker: Activate event in progress.');
-  const currentCaches = [PRECACHE, RUNTIME];
-  event.waitUntil(
-      caches.keys().then(cacheNames => {
-          return cacheNames.filter(cacheName => !currentCaches.includes(cacheName));
-      }).then(cachesToDelete => {
-          return Promise.all(cachesToDelete.map(cacheToDelete => {
-              return caches.delete(cacheToDelete);
-          }));
-      }).then(() => self.clients.claim())
-      .catch(error => {
-          console.error('Service Worker: Activation failed:', error);
-          throw error;
-      })
-  );
+    const cacheWhitelist = [PRECACHE];
+    event.waitUntil(
+        caches.keys().then(cacheNames => {
+            return Promise.all(
+                cacheNames.map(cacheName => {
+                    if (!cacheWhitelist.includes(cacheName)) {
+                        return caches.delete(cacheName);
+                    }
+                })
+            );
+        }).then(() => self.clients.claim())
+    );
 });
 
 self.addEventListener('fetch', event => {
-  if (event.request.url.startsWith(self.location.origin)) {
-      event.respondWith(
-          caches.match(event.request).then(cachedResponse => {
-              if (cachedResponse) {
-                  return cachedResponse;
-              }
-              return caches.open(RUNTIME).then(cache => {
-                  return fetch(event.request).then(response => {
-                      // Speichern von MP4-Dateien im Cache
-                      if (event.request.url.endsWith('.mp4')) {
-                          return cache.put(event.request, response.clone()).then(() => {
-                              return response;
-                          });
-                      } else {
-                          return response;
-                      }
-                  });
-              });
-          })
-          .catch(error => {
-              console.error('Service Worker: Fetch failed:', error);
-              throw error;
-          })
-      );
-  }
+    if (event.request.url.startsWith(self.location.origin)) {
+        event.respondWith(
+            caches.match(event.request).then(response => {
+                return response || fetch(event.request).then(fetchResponse => {
+                    return caches.open(RUNTIME).then(cache => {
+                        cache.put(event.request, fetchResponse.clone());
+                        return fetchResponse;
+                    });
+                });
+            }).catch(() => {
+                return caches.match('/index.html');
+            })
+        );
+    }
 });
