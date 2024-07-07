@@ -126,7 +126,8 @@ label.hamburg {
 
 #home,
 #moments,
-#chat{
+#chat,
+#downloadButton{
     border: none;
     background-color: #dcc4d6;
     font-size: 1.5rem;

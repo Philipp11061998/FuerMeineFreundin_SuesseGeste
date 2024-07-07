@@ -8,13 +8,8 @@
     <link rel="icon" type="image/x-icon" href="../lib/img/favicon.png">
     <link rel="stylesheet" href="../src/assets/style.css" >
     <script src="../src/Nav.js" defer></script>
-    <script>
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('../lib/service-worker.js')
-                .then(() => console.log('Service Worker registered successfully.'))
-                .catch(error => console.log('Service Worker registration failed:', error));
-        }
-    </script>
+    <script src="../src/script.js" defer></script>
+    <script src="../service-worker.js" defer></script>
 </head>
 <body>
     <div id="SiteStart"></div>
