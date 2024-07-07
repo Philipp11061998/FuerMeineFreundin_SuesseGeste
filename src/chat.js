@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const allowedReferrers = [
-        'https://philippk.name/index.html',
-        'https://philippk.name/nested/moments.html'
+        'https://jasphi.com/index.html',
+        'https://jasphi.com/nested/moments.html'
     ];
     
     const referrer = document.referrer;
