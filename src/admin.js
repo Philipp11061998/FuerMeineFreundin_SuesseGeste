@@ -1,6 +1,4 @@
 $(document).ready(function() {
-    let adminPassword = ""; // Variable für das Admin-Passwort
-    let isLoading = false; // Variable für den Ladezustand
 
     $("#ChatPassword").css("display", "flex");
     

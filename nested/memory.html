@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jasminibini: Memory Spiel</title>
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <link rel="icon" type="image/x-icon" href="../lib/img/favicon.png">
+    <link rel="stylesheet" href="../src/assets/memory.css">
+    <link rel="stylesheet" href="../src/assets/nav.css">
+    <script src="../src/Nav.js" defer></script>
+    <script src="../src/memory.js" defer></script>
+</head>
+<body>
+    <div class="row">
+        <label class="hamburg" id="hamburgLabel">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </label>
+        <nav id="nav">
+            <button id="home"><a href="../index.html">Home</a></button>
+            <button id="moments"><a href="./moments.html">Moments</a></button>
+            <button id="chat"><a href="./chat.html">Chat</a></button>
+            <button id="memory" class="active"><a href="./memory.html">Memory</a></button>
+        </nav>
+    </div>
+    <div id="holder">
+        <h1>Lass uns doch eine Runde spielen</h1>
+        <div id="holderGameNav">
+            <button id="newGame" class="button-85">Neues Spiel</button>
+            <div id="playerHolder">
+                <text id="Player">Wer ist dran: </text>
+                <span id="pl"></span>
+            </div>
+        </div>
+        <div id="memoryHolder">
+            <div class="card" id="1">
+                <div class="turnaround">
+                    <div class="front" id="41"></div>
+                    <div class="back" id="21"></div>
+                </div>
+            </div>
+            <div class="card" id="2">
+                <div class="turnaround">
+                    <div class="front" id="42"></div>
+                    <div class="back" id="22"></div>
+                </div>
+            </div>
+            <div class="card" id="3">
+                <div class="turnaround">
+                    <div class="front" id="43"></div>
+                    <div class="back" id="23"></div>
+                </div>
+            </div>
+            <div class="card" id="4">
+                <div class="turnaround">
+                    <div class="front" id="44"></div>
+                    <div class="back" id="24"></div>
+                </div>
+            </div>
+            <div class="card" id="5">
+                <div class="turnaround">
+                    <div class="front" id="45"></div>
+                    <div class="back" id="25"></div>
+                </div>
+            </div>
+            <div class="card" id="6">
+                <div class="turnaround">
+                    <div class="front" id="46"></div>
+                    <div class="back" id="26"></div>
+                </div>
+            </div>
+            <div class="card" id="7">
+                <div class="turnaround">
+                    <div class="front" id="47"></div>
+                    <div class="back" id="27"></div>
+                </div>
+            </div>
+            <div class="card" id="8">
+                <div class="turnaround">
+                    <div class="front" id="48"></div>
+                    <div class="back" id="28"></div>
+                </div>
+            </div>
+            <div class="card" id="9">
+                <div class="turnaround">
+                    <div class="front" id="49"></div>
+                    <div class="back" id="29"></div>
+                </div>
+            </div>
+            <div class="card" id="10">
+                <div class="turnaround">
+                    <div class="front" id="50"></div>
+                    <div class="back" id="30"></div>
+                </div>
+            </div>
+            <div class="card" id="11">
+                <div class="turnaround">
+                    <div class="front" id="51"></div>
+                    <div class="back" id="31"></div>
+                </div>
+            </div>
+            <div class="card" id="12">
+                <div class="turnaround">
+                    <div class="front" id="52"></div>
+                    <div class="back" id="32"></div>
+                </div>
+            </div>
+            <div class="card" id="13">
+                <div class="turnaround">
+                    <div class="front" id="53"></div>
+                    <div class="back" id="33"></div>
+                </div>
+            </div>
+            <div class="card" id="14">
+                <div class="turnaround">
+                    <div class="front" id="54"></div>
+                    <div class="back" id="34"></div>
+                </div>
+            </div>
+            <div class="card" id="15">
+                <div class="turnaround">
+                    <div class="front" id="55"></div>
+                    <div class="back" id="35"></div>
+                </div>
+            </div>
+            <div class="card" id="16">
+                <div class="turnaround">
+                    <div class="front" id="56"></div>
+                    <div class="back" id="36"></div>
+                </div>
+            </div>
+            <div class="card" id="17">
+                <div class="turnaround">
+                    <div class="front" id="57"></div>
+                    <div class="back" id="37"></div>
+                </div>
+            </div>
+            <div class="card" id="18">
+                <div class="turnaround">
+                    <div class="front" id="58"></div>
+                    <div class="back" id="38"></div>
+                </div>
+            </div>
+            <div class="card" id="19">
+                <div class="turnaround">
+                    <div class="front" id="59"></div>
+                    <div class="back" id="39"></div>
+                </div>
+            </div>
+            <div class="card" id="20">
+                <div class="turnaround">
+                    <div class="front" id="60"></div>
+                    <div class="back" id="40"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="Password">
+        <form id="login">
+            <h4>Bitet gib das Passwort ein um in den Chat zu gelangen</h4>
+            <label id="label">Passwort:
+                <input type="password" name="password" id="password">
+                <input type="submit" id="submitpassword" class="button-71" value="Login">
+            </label>
+        </form>
+    </div>
+</body>
+</html>
